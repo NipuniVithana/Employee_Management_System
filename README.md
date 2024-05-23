@@ -34,7 +34,8 @@ This project is an Employee Management System built using Spring Boot, Spring Se
 
 ![Screenshot (385)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/e7fe64d2-8309-4f5e-903e-333e42ef2b24)
 
-#### Searchin Employee by name
+#### Searching Employee by name
+![Screenshot (387)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/bdedea46-c4d4-4b9c-bf32-5ab47b6d3935)
 
 
 
