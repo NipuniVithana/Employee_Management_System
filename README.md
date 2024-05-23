@@ -9,7 +9,7 @@ This project is an Employee Management System built using Spring Boot, Spring Se
 - Java
 - Spring Boot
 - Spring Security
-- Thymeleaf
+- HTML, CSS, Javascript
 - MySQL
 - JPA/Hibernate
 - Maven
