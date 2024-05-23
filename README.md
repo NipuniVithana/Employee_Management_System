@@ -11,18 +11,25 @@ This project is an Employee Management System built using Spring Boot, Spring Se
 - Attendance tracking
 - Payroll management
 - User authentication and authorization
-- Searching employees by keyword
+- Searching employees by name
 - Role-based access control
 
 #### DashBoard
+
 ![Screenshot (389)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/6a21aee8-0c89-496f-888f-77c92045565d)
 
 #### Employee Registration and Management
+
 ![Screenshot (380)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/3476bdec-a732-4209-9cfd-b8d872c06983)
 ![Screenshot (381)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/1a53c941-f043-447a-a024-f5a44493f7c3)
 ![Screenshot (383)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/76131cf1-74f8-445a-9cf6-395e8c9719c8)
 
 #### Attendence Tracking
+
+![Screenshot (384)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/860c9539-749f-435f-9054-ef5868f978b3)
+![Screenshot (391)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/a48e7028-3eaf-4866-9a2b-9a2bca917a65)
+
+#### Payroll management
 
 
 
