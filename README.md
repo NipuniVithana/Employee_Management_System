@@ -26,7 +26,6 @@ This project is an Employee Management System built using Spring Boot, Spring Se
 
 #### Attendence Tracking
 
-![Screenshot (384)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/860c9539-749f-435f-9054-ef5868f978b3)
 ![Screenshot (391)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/a48e7028-3eaf-4866-9a2b-9a2bca917a65)
 ![Screenshot (392)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/11503531-0e04-403b-b1c2-54b0a2a140c6)
 
@@ -36,6 +35,17 @@ This project is an Employee Management System built using Spring Boot, Spring Se
 
 #### Searching Employee by name
 ![Screenshot (387)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/bdedea46-c4d4-4b9c-bf32-5ab47b6d3935)
+
+## Technologies Used
+
+- Java
+- Spring Boot
+- Spring Security
+- Thymeleaf
+- MySQL
+- JPA/Hibernate
+- Maven
+
 
 
 
