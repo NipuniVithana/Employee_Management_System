@@ -14,4 +14,7 @@ This project is an Employee Management System built using Spring Boot, Spring Se
 - Searching employees by keyword
 - Role-based access control
 
+#### DashBoard
+![Screenshot (389)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/6a21aee8-0c89-496f-888f-77c92045565d)
+
 
