@@ -4,6 +4,15 @@ This project is an Employee Management System built using Spring Boot, Spring Se
 
 **Note:** This project is a second-year group project for our university course.
 
+## Technologies Used
+
+- Java
+- Spring Boot
+- Spring Security
+- Thymeleaf
+- MySQL
+- JPA/Hibernate
+- Maven
 
 ## Features
 
@@ -36,15 +45,7 @@ This project is an Employee Management System built using Spring Boot, Spring Se
 #### Searching Employee by name
 ![Screenshot (387)](https://github.com/NipuniVithana/Employee_Management_System/assets/99274261/bdedea46-c4d4-4b9c-bf32-5ab47b6d3935)
 
-## Technologies Used
 
-- Java
-- Spring Boot
-- Spring Security
-- Thymeleaf
-- MySQL
-- JPA/Hibernate
-- Maven
 
 
 
