@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script defer src="activePage.js"></script>
+    <title>Title</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+
+    <link rel="stylesheet" th:href="@{/css/Chart.min.css}">
+
+    <link rel="stylesheet" th:href="@{/css/perfect-scrollbar.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <link rel="shortcut icon" th:href="@{/images/favicon.svg}" type="image/x-icon">
+</head>
+<body>
+<div id="sidebar" class='active' th:fragment="sidebar"><!--sidebar-->
+    <div class="sidebar-wrapper active">
+        <div class="sidebar-header">
+            <img src="assets/images/logo.svg" alt="" srcset="">
+        </div>
+        <div class="sidebar-menu">
+            <ul class="menu">
+
+
+                <li class='sidebar-title'>Main Menu</li>
+
+
+
+                <li class="sidebar-item active">
+                    <a href="landing_page" class="sidebar-link color-secondary">
+                        <i data-feather="home" width="20" style="color: black"></i>
+                        <span>Dashboard</span>
+                    </a>
+
+                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <li class="sidebar-item active ">
+                    <a href="employee_register" class='sidebar-link'>
+                        <i data-feather="layout" width="20" style="color: black"></i>
+                        <span>Add New Employee</span>
+                    </a>
+
+                </li>
+
+
+
+
+                <li class="sidebar-item  active">
+                    <a href="employee_details" class='sidebar-link'>
+                        <i data-feather="layers" width="20" style="color: black"></i>
+                        <span>Employee Details</span>
+                    </a>
+
+                </li>
+
+
+
+
+                <li class="sidebar-item active">
+                    <a href="add_attendence" class='sidebar-link'>
+                        <i data-feather="grid" width="20" style="color: black"></i>
+                        <span>Attendence</span>
+                    </a>
+
+                </li>
+
+
+
+
+                <li class="sidebar-item  active">
+                    <a href="showAttendence" class='sidebar-link'>
+                        <i data-feather="file-plus" width="20" style="color: black"></i>
+                        <span>Attendence Details</span>
+                    </a>
+
+                </li>
+
+
+                <li class="sidebar-item  active">
+                    <a href="payroll" class='sidebar-link'>
+                        <i data-feather="file-plus" width="20" style="color: black"></i>
+                        <span>Payroll</span>
+                    </a>
+
+                </li>
+
+                <li class="sidebar-item  active">
+                    <a href="logout" class='sidebar-link'>
+                        <i data-feather="log-out" width="20" style="color: black"></i>
+                        <span>Sign Out</span>
+                    </a>
+
+                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </ul>
+        </div>
+        <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+    </div>
+</div>
+<script th:src="@{/js/feather.min.js}"></script>
+<script th:src="@{/js/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+
+<script th:src="@{/js/Chart.min.js}"></script>
+<script th:src="@{/js/apexcharts.min.js}"></script>
+<script th:src="@{/js/dashboard.js}"></script>
+
+<script th:src="@{/js/main.js}"></script>
+<script>
+    // Get the current page URL
+    const currentPageUrl = window.location.pathname;
+
+    // Get all the sidebar links
+    const sidebarLinks = document.querySelectorAll(".sidebar-link");
+
+    // Loop through each sidebar link to find the active page and apply the 'active' class
+    sidebarLinks.forEach(link => {
+        if (link.getAttribute("href") === currentPageUrl) {
+            link.classList.add("active");
+            // If you want to add the 'active' class to the parent 'li' element as well, use:
+            // link.parentElement.classList.add("active");
+        }
+    });
+
+
+
+</script>
+</body>
+</html>

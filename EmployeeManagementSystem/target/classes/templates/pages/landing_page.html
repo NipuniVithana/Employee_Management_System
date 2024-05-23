@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/dashboard}">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">    <link rel="stylesheet" th:href="@{/css/Chart.min.css}">
+
+    <link rel="stylesheet" th:href="@{/css/perfect-scrollbar.css}">
+    <link rel="stylesheet" th:href="@{/css/app.css}">
+    <link rel="shortcut icon" th:href="@{/images/favicon.svg}" type="image/x-icon">
+</head>
+<body>
+<div class="main-content container-fluid" layout:fragment="content">
+    <div class="page-title">
+        <h3>Dashboard</h3>
+        <p class="text-subtitle text-muted">A good dashboard to display your statistics</p>
+    </div>
+    <section class="section">
+        <div class="row mb-2">
+            <div class="col-12 col-md-3">
+                <div class="card card-statistic">
+                    <div class="card-body p-0">
+                        <div class="d-flex flex-column">
+                            <div class='px-3 py-3 d-flex justify-content-between'>
+                                <h3 class='card-title'>Employees Count</h3>
+                                <div class="card-right d-flex align-items-center">
+                                    <p th:text="${employeeCount}"></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="card card-statistic">
+                    <div class="card-body p-0">
+                        <div class="d-flex flex-column">
+                            <div class='px-3 py-3 d-flex justify-content-between'>
+                                <h3 class='card-title'>Average Salary</h3>
+                                <div class="card-right d-flex align-items-center">
+                                    <p th:text="'$' +${averageSalary}"></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="card card-statistic">
+                    <div class="card-body p-0">
+                        <div class="d-flex flex-column">
+                            <div class='px-3 py-3 d-flex justify-content-between'>
+                                <h3 class='card-title'>Attendence Counts</h3>
+                                <div class="card-right d-flex align-items-center">
+
+                                    <p th:text="${attendanceCount}"></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="card card-statistic">
+                    <div class="card-body p-0">
+                        <div class="d-flex flex-column">
+                            <div class='px-3 py-3 d-flex justify-content-between'>
+                                <h3 class='card-title'>Employee Leave</h3>
+                                <div class="card-right d-flex align-items-center">
+
+                                    <p th:text="${LeaveCount}"></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4 class="card-title">LEAVE DETAILS</h4>
+                        <div class="d-flex ">
+                            <i data-feather="download"></i>
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pb-0">
+                        <div class="table-responsive container emptable" style="overflow-x: scroll;width: 100%">
+                            <table class="table table-striped table-hover">
+                                <thead>
+                                <tr class="">
+                                    <th>Id</th>
+                                    <th>Full Name</th>
+
+
+                                    <th>NIC</th>
+
+
+                                    <th>Department </th>
+
+
+
+                                    <th>Attendence</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="b : ${employee}">
+
+                                    <td th:text="${b.id}"></td>
+                                    <td th:text="${b.full_name}"></td>
+
+                                    <td th:text="${b.NIC}"></td>
+
+                                    <td th:text="${b.department}"></td>
+
+                                    <td th:text="${b.isAttedence}" class="color-danger">
+
+
+                                </tr>
+
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card ">
+                    <div class="card-header">
+                        <h4>PAYROLL</h4>
+                    </div>
+                    <div class="card-body">
+                        <div id="radialBars"></div>
+                        <div class="text-center mb-5">
+                            <h6 style="padding: 5px;">From last month</h6>
+                            <h1 th:text="' $ '+${totalSalary}" class='text-green'></h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="card widget-todo">
+                    <div
+                            class="card-header border-bottom d-flex justify-content-between align-items-center">
+                        <h4 class="card-title d-flex">
+                            <i class='bx bx-check font-medium-5 pl-25 pr-75'></i>DEPARTMENT EMPLOYEE COUNT
+                        </h4>
+
+                    </div>
+                    <div class="card-body px-0 py-1">
+                        <table class='table table-borderless'>
+                            <tr>
+                                <td class='col-3'>IT</td>
+                                <td class='col-6'>
+                                    <div class="progress progress-info">
+                                        <div class="progress-bar" role="progressbar" th:style="'width: ' + ${sectionPercentages['IT']} + '%'"
+                                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td th:text="${it}" class='col-3 text-center'></td>
+                            </tr>
+                            <tr>
+                                <td class='col-3'>HRM</td>
+                                <td class='col-6'>
+                                    <div class="progress progress-success">
+                                        <div class="progress-bar" role="progressbar" th:style="'width: ' + ${sectionPercentages['HRM']} + '%'"
+                                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td th:text="${hrm}" class='col-3 text-center'></td>
+                            </tr>
+                            <tr>
+                                <td class='col-3'>TECHNICAL</td>
+                                <td class='col-6'>
+                                    <div class="progress progress-danger">
+                                        <div class="progress-bar" role="progressbar" th:style="'width: ' + ${sectionPercentages['Technical']} + '%'"
+                                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td th:text="${technical}" class='col-3 text-center'></td>
+                            </tr>
+                            <tr>
+                                <td class='col-3'>DESIGN</td>
+                                <td class='col-6'>
+                                    <div class="progress progress-primary">
+                                        <div class="progress-bar" role="progressbar" th:style="'width: ' + ${sectionPercentages['Design']} + '%'"
+                                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td th:text="${design}" class='col-3 text-center'></td>
+                            </tr>
+                            <tr>
+                                <td class='col-3'>SOCIAL MEDIA</td>
+                                <td class='col-6'>
+                                    <div class="progress progress-secondary">
+                                        <div class="progress-bar" role="progressbar" th:style="'width: ' + ${sectionPercentages['Social']} + '%'"
+                                             aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </td>
+                                <td th:text="${social}" class='col-3 text-center'></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+<script th:src="@{/js/feather.min.js}"></script>
+<script th:src="@{/js/perfect-scrollbar.min.js}"></script>
+<script th:src="@{/js/app.js}"></script>
+
+<script th:src="@{/js/Chart.min.js}"></script>
+<script th:src="@{/js/apexcharts.min.js}"></script>
+<script th:src="@{/js/dashboard.js}"></script>
+
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
